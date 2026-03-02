@@ -52,14 +52,39 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Trust banner */}
-        <section className="py-16">
+        {/* Fun banner */}
+        <section className="py-16 overflow-hidden">
           <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="hero-gradient rounded-3xl p-8 md:p-12 text-center text-primary-foreground mb-16"
+            >
+              <motion.p
+                className="text-4xl md:text-5xl mb-3"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                🎁
+              </motion.p>
+              <h2 className="text-2xl md:text-3xl font-display font-bold mb-2">
+                Order in 3 Easy Steps!
+              </h2>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mt-6 text-sm md:text-base font-semibold">
+                <span className="flex items-center gap-2"><span className="bg-primary-foreground/20 rounded-full w-8 h-8 flex items-center justify-center">1</span> Pick a Toy</span>
+                <span className="hidden md:block">→</span>
+                <span className="flex items-center gap-2"><span className="bg-primary-foreground/20 rounded-full w-8 h-8 flex items-center justify-center">2</span> Fill Your Details</span>
+                <span className="hidden md:block">→</span>
+                <span className="flex items-center gap-2"><span className="bg-primary-foreground/20 rounded-full w-8 h-8 flex items-center justify-center">3</span> Send via WhatsApp 💬</span>
+              </div>
+            </motion.div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               {[
-                { emoji: "🚚", title: "Fast Delivery", desc: "Quick shipping across India" },
-                { emoji: "✅", title: "Quality Assured", desc: "Safe, certified toys only" },
-                { emoji: "💬", title: "Easy Ordering", desc: "Order directly via WhatsApp" },
+                { emoji: "🚚", title: "Super Fast Delivery", desc: "Your toys arrive in no time!" },
+                { emoji: "🛡️", title: "100% Safe Toys", desc: "Certified & kid-friendly materials" },
+                { emoji: "💚", title: "WhatsApp Ordering", desc: "As easy as texting a friend!" },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -67,9 +92,16 @@ const Index = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15 }}
+                  whileHover={{ y: -5 }}
                   className="p-8 bg-card rounded-2xl card-shadow"
                 >
-                  <span className="text-5xl mb-4 block">{item.emoji}</span>
+                  <motion.span
+                    className="text-5xl mb-4 block"
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.3 }}
+                  >
+                    {item.emoji}
+                  </motion.span>
                   <h3 className="font-display font-bold text-lg mb-2">{item.title}</h3>
                   <p className="text-muted-foreground text-sm">{item.desc}</p>
                 </motion.div>
