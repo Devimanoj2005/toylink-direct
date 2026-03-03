@@ -343,4 +343,5 @@ export const products: Product[] = [
   },
 ];
 
-export const WHATSAPP_NUMBER = "919876543210"; // Change this to your WhatsApp number
+export const WHATSAPP_NUMBER = "918301922872"; // Devi Manoj
+export const SELLER_NAME = "Devi Manoj";
