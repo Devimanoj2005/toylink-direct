@@ -1,4 +1,4 @@
-export type Category = "all" | "cars" | "dolls" | "blocks" | "puzzles" | "soft-toys" | "educational";
+export type Category = "all" | "cars" | "dolls" | "blocks" | "puzzles" | "soft-toys" | "educational" | "outdoor" | "art" | "board-games" | "musical" | "action-figures" | "rc-toys";
 
 export interface Product {
   id: string;
@@ -18,6 +18,12 @@ export const categories: { value: Category; label: string; emoji: string }[] = [
   { value: "puzzles", label: "Puzzles", emoji: "🧩" },
   { value: "soft-toys", label: "Soft Toys", emoji: "🧸" },
   { value: "educational", label: "Educational", emoji: "📚" },
+  { value: "outdoor", label: "Outdoor Play", emoji: "⚽" },
+  { value: "art", label: "Art & Craft", emoji: "🎨" },
+  { value: "board-games", label: "Board Games", emoji: "🎲" },
+  { value: "musical", label: "Musical", emoji: "🎵" },
+  { value: "action-figures", label: "Action Figures", emoji: "🦸" },
+  { value: "rc-toys", label: "RC Toys", emoji: "🎮" },
 ];
 
 export const products: Product[] = [
@@ -122,6 +128,218 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1606503153255-59d8b8b82176?w=400&h=400&fit=crop",
     category: "puzzles",
     badge: "Fun!",
+  },
+  // Outdoor Play
+  {
+    id: "13",
+    name: "Kids Cricket Set",
+    price: 899,
+    description: "Complete cricket set with bat, ball, stumps and carrying bag.",
+    image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&h=400&fit=crop",
+    category: "outdoor",
+    badge: "Popular",
+  },
+  {
+    id: "14",
+    name: "Frisbee Flying Disc",
+    price: 199,
+    description: "Lightweight, colorful flying disc for outdoor fun. Safe for kids.",
+    image: "https://images.unsplash.com/photo-1628891890467-b2cf76a1be8c?w=400&h=400&fit=crop",
+    category: "outdoor",
+  },
+  {
+    id: "15",
+    name: "Badminton Racket Set",
+    price: 599,
+    description: "2-player badminton set with lightweight rackets and shuttlecocks.",
+    image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=400&h=400&fit=crop",
+    category: "outdoor",
+  },
+  // Art & Craft
+  {
+    id: "16",
+    name: "Watercolor Paint Set",
+    price: 349,
+    description: "36-color watercolor palette with brushes and mixing tray. Non-toxic.",
+    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=400&fit=crop",
+    category: "art",
+    badge: "Creative",
+  },
+  {
+    id: "17",
+    name: "DIY Jewelry Kit",
+    price: 499,
+    description: "Make your own bracelets and necklaces with colorful beads and charms.",
+    image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=400&h=400&fit=crop",
+    category: "art",
+  },
+  {
+    id: "18",
+    name: "Clay Modelling Set",
+    price: 399,
+    description: "12-color air-dry clay set with sculpting tools. Great for creativity!",
+    image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=400&fit=crop",
+    category: "art",
+  },
+  // Board Games
+  {
+    id: "19",
+    name: "Ludo Family Pack",
+    price: 299,
+    description: "Classic Ludo board game for 2-4 players. Family fun guaranteed!",
+    image: "https://images.unsplash.com/photo-1632501641765-e568d28b0015?w=400&h=400&fit=crop",
+    category: "board-games",
+    badge: "Family Fun",
+  },
+  {
+    id: "20",
+    name: "Chess Set Deluxe",
+    price: 699,
+    description: "Wooden chess set with felt base pieces. Perfect for beginners to pros.",
+    image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400&h=400&fit=crop",
+    category: "board-games",
+  },
+  {
+    id: "21",
+    name: "Snakes & Ladders",
+    price: 249,
+    description: "Classic snakes and ladders with vibrant board and dice. Ages 3+.",
+    image: "https://images.unsplash.com/photo-1606503153255-59d8b8b82176?w=400&h=400&fit=crop",
+    category: "board-games",
+  },
+  // Musical
+  {
+    id: "22",
+    name: "Kids Xylophone",
+    price: 449,
+    description: "Colorful 8-note xylophone with wooden mallets. Musical fun for toddlers!",
+    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=400&fit=crop",
+    category: "musical",
+    badge: "New",
+  },
+  {
+    id: "23",
+    name: "Mini Drum Set",
+    price: 999,
+    description: "5-piece mini drum kit with sticks and stool. Rock star starter pack!",
+    image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=400&h=400&fit=crop",
+    category: "musical",
+  },
+  {
+    id: "24",
+    name: "Toy Guitar",
+    price: 599,
+    description: "4-string acoustic toy guitar with vibrant design. Music for little ones!",
+    image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=400&h=400&fit=crop",
+    category: "musical",
+  },
+  // Action Figures
+  {
+    id: "25",
+    name: "Superhero Action Figure",
+    price: 549,
+    description: "Poseable superhero figure with cape and accessories. 12-inch tall.",
+    image: "https://images.unsplash.com/photo-1608889825103-eb5ed706fc19?w=400&h=400&fit=crop",
+    category: "action-figures",
+    badge: "Hot",
+  },
+  {
+    id: "26",
+    name: "Dinosaur Figure Set",
+    price: 799,
+    description: "Set of 6 realistic dinosaur figures. T-Rex, Triceratops and more!",
+    image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=400&h=400&fit=crop",
+    category: "action-figures",
+  },
+  {
+    id: "27",
+    name: "Space Warrior Robot",
+    price: 899,
+    description: "LED light-up robot with sound effects and movable joints.",
+    image: "https://images.unsplash.com/photo-1535378620166-273708d44e4c?w=400&h=400&fit=crop",
+    category: "action-figures",
+  },
+  // RC Toys
+  {
+    id: "28",
+    name: "RC Racing Car",
+    price: 1499,
+    description: "High-speed remote control racing car with rechargeable battery.",
+    image: "https://images.unsplash.com/photo-1594787318286-3d835c1d207f?w=400&h=400&fit=crop",
+    category: "rc-toys",
+    badge: "Bestseller",
+  },
+  {
+    id: "29",
+    name: "RC Helicopter",
+    price: 1799,
+    description: "3.5 channel RC helicopter with gyro stability and LED lights.",
+    image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
+    category: "rc-toys",
+  },
+  {
+    id: "30",
+    name: "RC Stunt Car",
+    price: 1299,
+    description: "360° flip stunt car with dual-side driving. Rechargeable and fast!",
+    image: "https://images.unsplash.com/photo-1581235707960-35f13de9905c?w=400&h=400&fit=crop",
+    category: "rc-toys",
+    badge: "New",
+  },
+  // More Soft Toys
+  {
+    id: "31",
+    name: "Giant Panda Plush",
+    price: 999,
+    description: "Extra large 24-inch panda plush toy. Super soft and cuddly!",
+    image: "https://images.unsplash.com/photo-1559715541-5daf8a0296d0?w=400&h=400&fit=crop",
+    category: "soft-toys",
+    badge: "Jumbo",
+  },
+  // More Educational
+  {
+    id: "32",
+    name: "Globe & Map Set",
+    price: 899,
+    description: "Illuminated world globe with country map poster. Learn geography!",
+    image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=400&h=400&fit=crop",
+    category: "educational",
+  },
+  {
+    id: "33",
+    name: "Science Experiment Kit",
+    price: 1199,
+    description: "50+ science experiments for curious minds. Safe and educational!",
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=400&fit=crop",
+    category: "educational",
+    badge: "STEM",
+  },
+  // More Cars
+  {
+    id: "34",
+    name: "Fire Engine Truck",
+    price: 749,
+    description: "Realistic fire truck with water spray, lights and siren sounds.",
+    image: "https://images.unsplash.com/photo-1594787318286-3d835c1d207f?w=400&h=400&fit=crop",
+    category: "cars",
+  },
+  {
+    id: "35",
+    name: "Construction Excavator",
+    price: 599,
+    description: "Working arm excavator with realistic digging action. Heavy-duty fun!",
+    image: "https://images.unsplash.com/photo-1581235707960-35f13de9905c?w=400&h=400&fit=crop",
+    category: "cars",
+  },
+  // More Dolls
+  {
+    id: "36",
+    name: "Fashion Doll Wardrobe",
+    price: 1299,
+    description: "Fashion doll with 10 outfits, shoes, and accessories wardrobe set.",
+    image: "https://images.unsplash.com/photo-1613682988402-4012dbc9709e?w=400&h=400&fit=crop",
+    category: "dolls",
+    badge: "Deluxe",
   },
 ];
 
