@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import ProductCard from "@/components/ProductCard";
 import CategoryFilter from "@/components/CategoryFilter";
@@ -27,24 +28,37 @@ const Products = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background bg-confetti">
       <Navbar />
       <main className="container mx-auto px-4 py-10">
-        <h1 className="text-3xl md:text-4xl font-display font-bold text-center mb-2">
-          🎁 All Toys
-        </h1>
-        <p className="text-muted-foreground text-center mb-8">
-          Find the perfect toy and order via WhatsApp
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-8"
+        >
+          <motion.span
+            className="text-5xl block mb-2"
+            animate={{ rotate: [0, 10, -10, 0], y: [0, -5, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            🎁
+          </motion.span>
+          <h1 className="text-3xl md:text-4xl font-display font-bold mb-2">
+            All <span className="text-primary wavy-underline">Toys</span>
+          </h1>
+          <p className="text-muted-foreground">
+            Find the perfect toy and order via WhatsApp 💬
+          </p>
+        </motion.div>
 
         {/* Search */}
         <div className="max-w-md mx-auto mb-8 relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Search toys..."
+            placeholder="🔍 Search for fun toys..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-10 rounded-full"
+            className="pl-10 rounded-full border-2 border-accent/30 focus:border-accent bg-card shadow-sm text-base"
           />
         </div>
 
@@ -62,10 +76,22 @@ const Products = () => {
         </div>
 
         {filtered.length === 0 && (
-          <div className="text-center py-20">
-            <span className="text-6xl mb-4 block">🔍</span>
-            <p className="text-muted-foreground text-lg">No toys found. Try a different search!</p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-center py-20"
+          >
+            <motion.span
+              className="text-7xl mb-4 block"
+              animate={{ rotate: [0, 15, -15, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              🔍
+            </motion.span>
+            <p className="text-muted-foreground text-lg font-display">
+              Oops! No toys found 😢 Try a different search!
+            </p>
+          </motion.div>
         )}
       </main>
       <Footer />
