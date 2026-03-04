@@ -74,8 +74,8 @@ ${form.note ? `*Note:* ${form.note}` : ""}
 Please confirm my order. 🙏`;
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
     handleClose();
+    window.location.href = url;
   };
 
   if (!product) return null;
